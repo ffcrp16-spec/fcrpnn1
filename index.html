@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" sizes=" 48x48">
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bpg-nino-mtavruli" rel="stylesheet">
+    <title>Excellent Dreams RolePlay - გაერთე ჩვენთან ერთად</title>
+    <script>
+        function updateCounter(finalCount) {
+            var currentCount = 0;
+
+            function incrementCounter() {
+                $("#counter").text(currentCount++);
+                if (currentCount <= finalCount) {
+                    setTimeout(incrementCounter, 15); // Adjust the time interval as needed
+                }
+            }
+
+            incrementCounter();
+        }
+
+        $(document).ready(function () {
+            // Fetch the final count from the server using AJAX
+            $.ajax({
+                url: 'mobile/players.php', // Adjust the path to your PHP file
+                success: function (data) {
+                    // Parse the fetched data as an integer
+                    var finalCount = parseInt(data, 10);
+                    if (!isNaN(finalCount)) {
+                        updateCounter(finalCount);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="loader">
+        <img src="images/logoo.png" alt="Logo">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+    <div class="main-content">
+        <!-- <img class="purple" src="./img/purple.png"> -->
+        <section class="hero">
+            <nav data-aos="fade-left">
+                <div class="logo">
+                    <img class="logo-img" src="images/logoo.png">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">მთავარი</a><span class="separator">|</span></li>
+                    <li><a href="https://forum.edrp-official.com">ფორუმი</a><span class="separator">|</span></li> <!-- ფორუმის ლინკი -->
+                    <li><a href="#play">თამაშის დაწყება</a></li>
+                    <a style="text-decoration: none;" href="donation.php" class="cta-button-2">მაღაზია</a>
+                </ul>
+                <a style="text-decoration: none;" href="https://discord.gg/bMzr48YduG" class="cta-button">საიტის ედითორის სერვერი</a>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+            <div class="left" data-aos="fade-right">
+                <div class="title">
+                <h1>EXCELLENT DREAMS <span style="color: #740707;"> ROLEPLAY</span></h1>
+                </div>
+                <p>პროექტი შენთვის 💜</p>
+                <p>IP: 185.169.134.100:7777</p>
+
+            </div>
+            <div class="counter">
+        <img class="carr" data-aos="fade-right" src="images/carr.png">
+        <span class="fontnumb" id="counter" style="font-size: 15px;">Saxeli_Gvari</span>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                animateLoader(0);
+
+                function animateLoader(percentage) {
+                    if (percentage <= 100) {
+                        $('.percentage').text(percentage + '%');
+                        setTimeout(function () {
+                            animateLoader(percentage + 1);
+                        }, 15);
+                    } else {
+                        $('.loader').fadeOut(1500);
+                        AOS.init({ duration: 2500 });
+                    }
+                }
+            });
+        </script>
+<!-- 
+            <img class="black" src="./img/black.png"> -->
+        </section>
+
+
+        <section class="play" id="play">
+            <img data-aos="fade-up" class="triangle" src="images/triangle.png">
+            <div class="section-title" style="z-index: 9;">
+                <h1 data-aos="fade-down">როგორ დავიწყოთ თამაში</h1>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="card-number">
+                        <h1>1</h1>
+                        <div class="card-line" data-aos="fade-left">
+                            <div class="number-ball"></div>
+                            <div class="number-line"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p>გადმოწერეთ და დააინსტალირეთ ჩვენი ლაუნჩერებიდან თქვენთვის სასურველი</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-number">
+                        <h1>2</h1>
+                        <div class="card-line" data-aos="fade-left">
+                            <div class="number-ball"></div>
+                            <div class="number-line"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p>დააყენეთ ლაუნჩერის მუშაობისთვის ყველა საჭირო ფაილი ერთი ღილაკით</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-number">
+                        <h1>3</h1>
+                        <div class="card-line" data-aos="fade-left">
+                            <div class="number-ball"></div>
+                            <div class="number-line"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p>მიუთითეთ თქვენი სახელი თამაშში და დააჭირეთ თამაშის ღილაკს</p>
+                    </div>
+                </div>
+            </div>
+            <img data-aos="fade-down" class="triangle-2" src="images/triangle-2.png">
+            <div class="download" data-aos="fade-up">
+                <a href="https://dl.edrp-official.com/EDRP-PC-Launcher.exe" class="pc">
+                    <img src="images/windows.svg">
+                    <h1>DOWNLOAD</h1>
+                </a>
+                <h1 style="font-family: 'BPG Nino Mtavruli';">PC ლაუნჩერი</h1>
+                <a href="https://mobile.edrp-official.com/edrplauncher.apk" class="pc">
+                    <img src="images/android.svg">
+                    <h1>DOWNLOAD</h1>
+                </a>
+                <h1 style="font-family: 'BPG Nino Mtavruli';">MOBILE ლაუნჩერი</h1>
+            </div>
+        </section>
+        <img class="isari" src="images/is%20%281%29.png" style="position: absolute; left: -100px; width: 25%;">
+        <section class="about">
+            <div class="about-text">
+                <h1>
+                    <div class="blueline"></div>ჩვენს შესახებ
+                </h1>
+                <br>
+                <p>EDRP ეს არის საქართველოს №1 SA-MP პროექტი, რომელიც შეიქმნა 2015 წელს.
+                    მხოლოდ ჩვენთან შეძლებთ ღრმად ჩაეფლოთ ვირტუალურ სამყაროში და მიიღოთ მაქსიმალური სიამოვნება თამაშისგან!
+
+                </p>
+                <div class="socials">
+                    <a href="https://www.youtube.com/@EDRPGAMES" target="_blank" class="yt"> <!-- Youtube -ის ლინკი -->
+                        <img src="images/yt.png">
+                        <p>Youtube</p>
+                    </a>
+                    <a href="https://www.facebook.com/edrpsampN1" target="_blank" class="fb">
+                        <img src="images/fb.svg"> <!-- Facebook -ის ლინკი -->
+                        <p>Facebook</p>
+                    </a>
+                    <a href="https://discord.gg/Hsnuxrz6vK" target="_blank" class="dc">
+                        <img src="images/dc.svg"> <!-- Discord -ის ლინკი -->
+                        <p>Discord</p>
+                    </a>
+                </div>
+            </div>
+</section>
+    </div>
+    
+          
+       
+        </div>
+       
+        
+    </footer>
+    <!-- <img class="purple2" src="./img/purple2.png" style="z-index: -1;position: absolute; top: 0; right: 0"> -->
+    <div id="online">
+
+    </div>
+    <script src="js/aos.js"></script>
+    <script>
+
+    </script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            animateLoader(0);
+
+            function animateLoader(percentage) {
+                if (percentage <= 100) {
+                    $('.percentage').text(percentage + '%');
+                    setTimeout(function () {
+                        animateLoader(percentage + 1);
+                    }, 15);
+                } else {
+                    $('.loader').fadeOut(1500);
+                    AOS.init({ duration: 2500 });
+                }
+            }
+        });
+    </script> 
+
+
+
+</body></html>
